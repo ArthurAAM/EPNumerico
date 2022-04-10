@@ -42,7 +42,7 @@ def inicializeMatrix(n):
 
 
 def main():
-    # print(inicializeMatrix(20))
+    print(inicializeMatrix(20))
     print(initializeResults(20))
 
 
