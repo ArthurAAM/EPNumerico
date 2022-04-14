@@ -2,10 +2,10 @@ import numpy as np
 
 
 def initializeResults(n):
-    arr = []
+    array = np.empty((n))
     for position in range(1, n + 1):
-        arr.append(np.cos((2 * np.pi * position**2)/n**2))
-    return np.array(arr)
+        array[position - 1] = np.cos((2 * np.pi * position**2)/n**2)
+    return array
 
 
 def calculateValue(i, j, n):
@@ -22,6 +22,7 @@ def calculateValue(i, j, n):
         return (2*i - 1)/(2*i)
     if i == j - 1:
         return 1 - (2*i - 1)/(2*i)
+
     return 0
 
 
@@ -34,8 +35,7 @@ def inicializeMatrix(n):
         for column in range(row - 1, row + 2):
             c = column % 20
             matrix[row - 1][c - 1] = calculateValue(row, column, n)
-        print(matrix[row - 1])
-    return np.matrix(matrix)
+    return matrix
 
 
 def main():
