@@ -26,22 +26,20 @@ def calculateValue(i, j, n):
 
 
 def inicializeMatrix(n):
-    matrix = []
+    matrix = np.zeros((n, n))
     for row in range(1, n + 1):
-        line = []
         # O enunciado trata as linhas e colunas como indo de 1 a n, enquanto o Python as trata como indo
         # de 0 a n - 1. Isso pode gerar algumas confusões, mas é o motivo pelo qual o range, por exemplo,
         # vai de 1 a n + 1 neste código.
-        for column in range(1, n + 1):
-            value = calculateValue(row, column, n)
-            line.append(value)
-        matrix.append(line)
-    matrix[0][-1] = 0.25
-    matrix[n - 1][0] = (1 - (2*n - 1)/2*n)
+        for column in range(row - 1, row + 2):
+            c = column % 20
+            matrix[row - 1][c - 1] = calculateValue(row, column, n)
+        print(matrix[row - 1])
     return np.matrix(matrix)
 
 
 def main():
+    print("---------------------------")
     print(inicializeMatrix(20))
     print(initializeResults(20))
 
