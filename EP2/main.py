@@ -95,10 +95,10 @@ def main():
                                                                                                     lambda y: (1 - y)**0.5, lambda x, y: 1), dupla(0, 1, n10, lambda x: 0, lambda y: (1 - y)**0.5, lambda x, y: 1)]
 
             print(
-                f"A área em baixo da parábola, para o limite de 1 - x^2, no intervalo pedido é: \n\tPara n6: {limite_x[0]} u.v. \n\tPara n8: {limite_x[1]} u.v. \n\tPara n10: {limite_x[2]} u.v. \n\tValor esperado: 0.6666666... u.v. \n")
+                f"A área em baixo da parábola, para o limite de 1 - x^2, no intervalo pedido é: \n\tPara n6: {limite_x[0]} u.a. \n\tPara n8: {limite_x[1]} u.a. \n\tPara n10: {limite_x[2]} u.a. \n\tValor esperado: 0.6666666... u.a. \n")
 
             print(
-                f"A área em baixo da parábola, para o limite de √(1 - y), no intervalo pedido é: \n\tPara n6: {limite_y[0]} u.v. \n\tPara n8: {limite_y[1]} u.v. \n\tPara n10: {limite_y[2]} u.v. \n\tValor esperado: 0.6666666... u.v. \n")
+                f"A área em baixo da parábola, para o limite de √(1 - y), no intervalo pedido é: \n\tPara n6: {limite_y[0]} u.a. \n\tPara n8: {limite_y[1]} u.a. \n\tPara n10: {limite_y[2]} u.a.. \n\tValor esperado: 0.6666666... u.a. \n")
 
         if (choice == 3):
             volume = [dupla(0.1, 0.5, n6, lambda x: x**3, lambda x: x**2, lambda x, y: e**(y/x)), dupla(0.1, 0.5, n8, lambda x: x **
