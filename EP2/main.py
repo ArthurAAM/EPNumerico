@@ -124,7 +124,7 @@ def main():
                 f"O volume da calota esférica é: \n\tPara n6: {calota[0]} u.v. \n\tPara n8: {calota[1]} u.v. \n\tPara n10: {calota[2]} u.v. \n\tValor esperado: 0.179987079112 u.v. \n")
 
             print(
-                f"O volume da calota esférica é: \n\tPara n6: {curva[0]} u.v. \n\tPara n8: {curva[1]} u.v. \n\tPara n10: {curva[2]} u.v. \n\tValor esperado: 3.75824963423 u.v. \n")
+                f"O volume do sólido de revolução é: \n\tPara n6: {curva[0]} u.v. \n\tPara n8: {curva[1]} u.v. \n\tPara n10: {curva[2]} u.v. \n\tValor esperado: 3.75824963423 u.v. \n")
 
         if (choice == 0):
             print("Programa encerrado.", "\n")
