@@ -10,6 +10,39 @@
 
 import numpy as np
 
+n10 = [(-0.1488743389816312108848260, 0.2955242247147528701738930), (-0.4333953941292471907992659, 0.2692667193099963550912269), (-0.6794095682990244062343274, 0.2190863625159820439955349), (-0.8650633666889845107320967, 0.1494513491505805931457763), (-0.9739065285171717200779640, 0.0666713443086881375935688),
+       (0.1488743389816312108848260, 0.2955242247147528701738930), (0.4333953941292471907992659, 0.2692667193099963550912269), (0.6794095682990244062343274, 0.2190863625159820439955349), (0.8650633666889845107320967, 0.1494513491505805931457763), (0.9739065285171717200779640, 0.0666713443086881375935688)]
+
+
+def tridiagonalLU(n, a, b, c, cyclic):
+
+    if (cyclic):
+        a = a[:n - 1]
+        a[0] = 0
+        b = b[:n - 1]
+        c = c[:n - 1]
+        c[n - 2] = 0
+        n = n - 1
+
+    L = np.zeros((n, n))
+    U = np.zeros((n, n))
+    u = np.zeros((n))
+    l = np.zeros((n))
+    u[0] = b[0]
+
+    for i in range(1, n):
+        l[i] = a[i]/u[i-1]
+        u[i] = b[i] - l[i]*c[i-1]
+
+    for i in range(0, n):
+        L[i][i] = 1
+        U[i][i] = u[i]
+        if i < n - 1:
+            L[i+1][i] = l[i+1]
+            U[i][i+1] = c[i]
+
+    return L, U
+
 
 def initializeResults(n, manual=True):
     array = np.empty((n))
@@ -113,15 +146,15 @@ def solveSystem(n, a, b, c, d, cyclic):
     return tridiagonalSolution(n, a, b, c, d)
 
 
-def dupla(a, b, n, c, d, f):
+def dupla(a, b, c, d, f):
     h1 = (b-a)/2
     h2 = (b+a)/2
     J = 0
 
     for i in range(len(n)):
         JX = 0
-        r1 = n[i][0]
-        w1 = n[i][1]
+        r1 = n10[i][0]
+        w1 = n10[i][1]
         x = h1*r1 + h2
         c1 = c(x)  # definir c(x) para cada exemplo
         d1 = d(x)  # definir d(x) para cada exemplo
@@ -129,8 +162,8 @@ def dupla(a, b, n, c, d, f):
         k2 = (d1 + c1)/2
 
         for j in range(len(n)):
-            r2 = n[j][0]
-            w2 = n[j][1]
+            r2 = n10[j][0]
+            w2 = n10[j][1]
             y = k1*r2 + k2
             Q = f(x, y)
             JX = JX + w2*Q
