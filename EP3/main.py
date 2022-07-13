@@ -175,6 +175,34 @@ def dupla(a, b, c, d, f):
 
 
 def main():
+    print("")
+    print("Bem-vindo ao programa de Modelagem de um Sistema de Resfriamento de Chips escrito por Arthur Maia e Caio Balreira. \n")
+    print("Neste programa, existem 3 funcionalidades:\n 1) Validação do Método dos Elementos Finitos \n 2) Equilíbrio com Forçantes de Calor \n 3) Equilíbrio com variação de material 0) Encerrar o programa \n")
+
+    while True:
+        while True:
+            try:
+                choice = int(
+                    input("Escolha a funcionalidade que deseja executar: "))
+                print("")
+                if (choice < 0 or choice > 3):
+                    raise ValueError()
+                break
+            except ValueError:
+                print("Esta funcionalidade não é válida. Por favor, tente outra \n")
+
+        if (choice == '1'):
+            pass
+
+        if (choice == '2'):
+            pass
+
+        if (choice == '3'):
+            pass
+
+        if (choice == '0'):
+            print("Programa encerrado.", "\n")
+            break
 
     return 0
 
