@@ -1,0 +1,16 @@
+Este programa foi escrito por Arthur de Azevedo e Almeida Maia (Nusp 11819921) e 
+Caio Balreira Nascimento (Nusp 11805342).
+
+Para executar o programa, deve-se possuir Python na versão 3.7 ou superior instalado,
+além da biblioteca Numpy instalada em versão compatível com a versão do Python. 
+Depois, salva-se o arquivo main.py em algum diretório e abre-se com Python (via a 
+opção "abrir com", caso o Python não seja o padrão para abrir os arquivos desse tipo)
+
+Abrindo o programa, serão apresentadas 4 (quatro) funcionalidades ao usuário:
+  1) Validação do Método dos Elementos Finitos
+  2) Equilíbrio com Forçantes de Calor
+  3) Equilíbrio com variação de material
+  0) Encerrar o programa
+
+Insere-se então o número correspondente à funcionalidade desejada e insere-se os inputs,
+se requisitado.
